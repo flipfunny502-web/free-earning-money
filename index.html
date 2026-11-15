@@ -153,3 +153,55 @@
   </script>
 </body>
 </html>
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#102b24" />
+  <title>FREE EARNING MONEY</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    :root{--ink:#182820;--muted:#718078;--green:#168653;--green2:#e9f7ef;--gold:#f7df8a;--paper:#f4f8f5;--line:#e7eee9}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif}
+    .wrap{max-width:560px;margin:auto;padding:16px 15px 100px}.profile{background:linear-gradient(130deg,#103c2d,#176c49);color:white;border-radius:25px;padding:19px;display:flex;align-items:center;gap:13px;box-shadow:0 10px 25px #164b3020}.avatar{width:55px;height:55px;border-radius:18px;background:#ffffff20;display:grid;place-items:center;font-size:27px}.profile h1{font-size:19px;margin:0 0 4px}.profile .muted{color:#d3e9dc}.muted{color:var(--muted);font-size:12px;line-height:1.5}
+    .balance{margin-top:16px;background:var(--gold);border-radius:24px;padding:22px;color:#4d3b08}.balance .amount{font-size:40px;font-weight:850;line-height:1.2;margin:6px 0}.balance .muted{color:#66551e}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:12px}.tile,.panel{background:white;border:1px solid var(--line);border-radius:20px;padding:15px}.tile{min-height:105px}.ico{width:40px;height:40px;border-radius:13px;background:var(--green2);display:grid;place-items:center;font-size:21px;margin-bottom:8px}.tile strong{display:block;font-size:22px;margin-top:2px}.section{margin-top:17px}.section h2{font-size:16px;margin:0 0 10px}.task{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.task:last-child{border:0}.task strong{font-size:14px}button{border:0;border-radius:12px;padding:10px 13px;background:var(--green);color:white;font-weight:700;font-size:13px;white-space:nowrap}button.secondary{background:var(--green2);color:var(--green)}button:disabled{opacity:.55}
+    input{width:100%;padding:12px;border:1px solid #dce7df;border-radius:12px;font:inherit;margin:7px 0 10px;background:#fbfdfb}.notice{background:#fff8df;color:#69551a;padding:12px 13px;border-radius:14px;font-size:12px;line-height:1.55;margin-top:14px}.status{min-height:20px;margin:7px 0 0}.nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:9px 3px max(9px,env(safe-area-inset-bottom));z-index:5}.nav a{color:#738078;text-decoration:none;text-align:center;font-size:10px;flex:1}.nav a span{display:block;font-size:20px;margin-bottom:2px}.pill{display:inline-block;padding:4px 8px;border-radius:20px;background:#edf5ef;color:#27744b;font-size:11px;font-weight:700}.disabled-note{padding:12px;background:#f5f6f5;border-radius:13px;color:#606c64;font-size:12px;line-height:1.5}
+    @media(max-width:360px){.balance .amount{font-size:34px}.wrap{padding-left:11px;padding-right:11px}.profile h1{font-size:17px}}
+  </style>
+</head>
+<body>
+<main class="wrap">
+  <header class="profile"><div class="avatar">💰</div><div><h1>FREE EARNING MONEY</h1><div class="muted" id="username">Telegram Mini App</div></div></header>
+  <section class="balance"><div class="muted">আমার পয়েন্ট</div><div class="amount"><span id="points">0</span> পয়েন্ট</div><div class="muted">এগুলো অ্যাপের অভ্যন্তরীণ পয়েন্ট; নগদ অর্থ নয়।</div></section>
+  <section class="grid">
+    <div class="tile"><div class="ico">⚡</div><div class="muted">সম্পন্ন কাজ</div><strong id="doneCount">0</strong></div>
+    <div class="tile"><div class="ico">👥</div><div class="muted">রেফার কাউন্ট</div><strong id="refCount">0</strong></div>
+    <div class="tile"><div class="ico">🎯</div><div class="muted">আজকের কাজ</div><strong id="todayCount">2</strong></div>
+    <div class="tile"><div class="ico">🏆</div><div class="muted">র‍্যাঙ্ক</div><strong id="rank">—</strong></div>
+  </section>
+  <section class="section panel" id="tasks"><h2>🧩 কাজের তালিকা</h2>
+    <div class="task"><div><strong>আমাদের চ্যানেল দেখো</strong><div class="muted">সম্পন্ন করলে +10 পয়েন্ট</div></div><button data-task="task1" data-reward="10" onclick="completeTask(this)">সম্পন্ন করো</button></div>
+    <div class="task"><div><strong>অ্যাপের নিয়ম পড়ো</strong><div class="muted">সম্পন্ন করলে +5 পয়েন্ট</div></div><button data-task="task2" data-reward="5" onclick="completeTask(this)">সম্পন্ন করো</button></div>
+  </section>
+  <section class="section panel" id="referral"><h2>🔗 রেফারেল</h2><div class="muted">বটের ইউজারনেম সেট করলে ব্যক্তিগত আমন্ত্রণ লিংক এখানে দেখাবে।</div><input id="refLink" readonly value="বটের ইউজারনেম সেট করা হয়নি"/><button class="secondary" onclick="copyReferral()">লিংক কপি</button><p class="muted status" id="refStatus"></p></section>
+  <section class="section panel" id="withdraw"><h2>👛 উত্তোলন</h2><div class="disabled-note">উত্তোলন সুবিধা এখনো চালু হয়নি। পয়েন্টের কোনো নগদ মূল্য নেই এবং এখান থেকে টাকা পাঠানো হয় না।</div><button style="margin-top:11px" disabled>উত্তোলন বর্তমানে বন্ধ</button></section>
+  <section class="section panel" id="leaderboard"><h2>🏆 লিডারবোর্ড</h2><div class="task"><span>লিডারবোর্ড ডেটা</span><span class="pill">সার্ভার সংযোগ বাকি</span></div><div class="muted">সবার প্রকৃত স্কোর দেখাতে নিরাপদ সার্ভার সংযোগ প্রয়োজন।</div></section>
+  <div class="notice">অ্যাকাউন্ট ও পয়েন্ট এখন এই ডিভাইসের ব্রাউজারে সংরক্ষিত হয়। অন্য ডিভাইসে একই তথ্য দেখানো, আসল রেফারেল যাচাই এবং অ্যাডমিন নিয়ন্ত্রণের জন্য নিরাপদ সার্ভার সংযোগ এখনো প্রয়োজন।</div>
+</main>
+<nav class="nav"><a href="#"><span>🏠</span>হোম</a><a href="#tasks"><span>☑️</span>কাজ</a><a href="#referral"><span>👥</span>রেফার</a><a href="#leaderboard"><span>🏆</span>লিডারবোর্ড</a><a href="#withdraw"><span>👛</span>ওয়ালেট</a></nav>
+<script>
+  const tg=window.Telegram?.WebApp;
+  if(tg){tg.ready();tg.expand();const u=tg.initDataUnsafe?.user;if(u){document.getElementById('username').textContent=u.first_name+(u.username?' · @'+u.username:'')}}
+  const STORE='fem_app_state_v2';
+  let state={points:0,done:0,completed:[]};
+  try{const saved=JSON.parse(localStorage.getItem(STORE)||'null');if(saved&&Number.isFinite(saved.points)&&Array.isArray(saved.completed))state=saved}catch(e){}
+  function save(){localStorage.setItem(STORE,JSON.stringify(state));render()}
+  function render(){document.getElementById('points').textContent=state.points;document.getElementById('doneCount').textContent=state.done;document.querySelectorAll('[data-task]').forEach(b=>{const done=state.completed.includes(b.dataset.task);b.disabled=done;b.textContent=done?'সম্পন্ন':'সম্পন্ন করো'})}
+  function completeTask(button){const id=button.dataset.task;const reward=Number(button.dataset.reward);if(state.completed.includes(id))return;state.completed.push(id);state.points+=reward;state.done+=1;save()}
+  function copyReferral(){const value=document.getElementById('refLink').value;const status=document.getElementById('refStatus');if(!value.startsWith('https://')){status.textContent='আগে BotFather থেকে বটের ইউজারনেম সেট করতে হবে।';return}navigator.clipboard.writeText(value).then(()=>status.textContent='লিংক কপি হয়েছে।').catch(()=>status.textContent='এই ব্রাউজারে কপি করা যায়নি।')}
+  render();
+</script>
+</body>
+</html>
